@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn and SignUp Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <button class="btn" onclick="showSignInForm()">Sign In</button>
+    <button class="btn" onclick="showSignUpForm()">Sign Up</button>
+
+    <!-- SignIn Form -->
+    <div id="signInForm" class="form sign-in-form">
+        <h2>Sign In</h2>
+        <div class="form-group">
+            <label for="signInEmail">Email:</label>
+            <input type="email" id="signInEmail" name="signInEmail" required>
+        </div>
+
+        <div class="form-group">
+            <label for="signInPassword">Password:</label>
+            <input type="password" id="signInPassword" name="signInPassword" required>
+        </div>
+
+        <button type="button" onclick="validateSignIn()">Sign In</button>
+    </div>
+
+    <!-- SignUp Form -->
+    <div id="signUpForm" class="form sign-up-form">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="signUpEmail">Email:</label>
+            <input type="email" id="signUpEmail" name="signUpEmail" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="150" required>
+        </div>
+
+        <div class="form-group">
+            <label for="passwordSignUp">Password:</label>
+            <input type="password" id="passwordSignUp" name="passwordSignUp" oninput="checkPasswordStrength()" required>
+            <div id="passwordStrength"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="\+92[0-9]{10}" placeholder="+92XXXXXXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+        </div>
+
+        <button type="button" onclick="validateSignUp()">Sign Up</button>
+    </div>
+
+    <div id="overlay"></div> <!-- Overlay for full screen effect -->
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
